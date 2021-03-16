@@ -1,9 +1,13 @@
 /// <reference types="cypress" />
 
 describe("Verify user can ", () => {
+
+    before('Open the web site', () => {
+        cy.visit('http://eaapp.somee.com/')
+    })
     
     it("successfuly login to the EA app", () => {
-        cy.visit('http://eaapp.somee.com/')
+        
         cy.contains("Login").click()
         cy.url().should("include", "Account/Login")
 
